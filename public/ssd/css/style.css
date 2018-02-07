@@ -1,0 +1,878 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+@font-face {
+    font-family: 'ncaa-michigan';
+    src: url('../fonts/NCAA Michigan St Spartans.otf');
+}
+
+@font-face {
+    font-family: 'DJB-Get-Digital';
+    src: url('../fonts/DJBGetDigital.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #282828;
+}
+
+.box-header {
+    background-position: left;
+    background-attachment: fixed;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    background-image: url('../img/header.png');
+    height: 100vh;
+}
+
+.box-header-eventos {
+    background-position: left;
+    background-attachment: fixed;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    background-image: url('../img/background-eventos.png');
+    height: 100vh;
+}
+
+.box-header-perfil {
+    background-position: left;
+    background-attachment: fixed;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    background-image: url('../img/background-perfil.png');
+    height: 100vh;
+}
+
+.box-filter-header {
+    background-color: rgba(45, 45, 45, 0.7);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    height: 100vh;
+}
+
+.img-midias-2 {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+}
+
+.countdown {
+    font-family: 'DJB-Get-Digital', 'roboto';
+    font-size: 8em;
+    color: #e6e6e6;
+    margin-top: 0.2em;
+}
+
+.biglogo {
+    height: 30em;
+    width: auto;
+}
+
+.frase-top {
+    font-family: 'ncaa-michigan';
+    font-size: 40pt;
+    color: #64ff00;
+    border: 1px solid #64ff00;
+}
+
+/* Menu*/
+
+#logossdmenu {
+    height: 50px !important;
+    margin-top: 7px;
+}
+
+.btnlogar-out {
+    border: 1px solid #64ff00 !important;
+    background: none !important;
+    padding: 2px !important;
+    height: 45px !important;
+    line-height: 38px !important;
+    width: 120px !important;
+    margin: 10px 15px !important;
+}
+
+.btnlogar-in {
+    background-color: #64ff00 !important;
+    color: #64ff00 !important;
+}
+
+.btnlogar-in p{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+
+.btnlogar-in p:hover {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    color: #282828 !important;
+    background-color: #e6e6e6 !important;
+}
+
+.btnlogar-in a {
+    color: #282828;
+}
+/*
+.btnlogar-in a:hover{
+    background-color: #282828 !important;
+    color: #282828 !important;
+}
+*/
+.btn, .btn-large {
+    background-color: transparent !important;
+    font-family: 'ncaa-michigan' !important;
+    margin-bottom: 0px !important;
+}
+
+.nav-wrapper {
+    background-color: #282828 !important;
+}
+
+.nav-wrapper a:hover {
+    color: #64ff00 !important;
+}
+
+.slider {
+    min-height: 540px !important;
+}
+
+.slides {
+    height: 500px !important;
+}
+
+.slider li .ative {
+    height: 500px !important;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #64ff00 !important;
+}
+
+.btn-floating i {
+    width: inherit;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+}
+
+p#paragrafo {
+    text-indent: 2em;
+}
+
+.textcuriosidades {
+    text-align: justify;
+    color: #e6e6e6;
+    font-size: 1.4em;
+    margin-left: 20px !important;
+    margin-right: 50px !important;
+}
+
+p#textperfil {
+    margin-left: 11px;
+    font-size: 1.2em;
+    color: #FFF;
+    margin-bottom: 0px !important;
+}
+
+#img-under {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 20px;
+}
+
+#img-under-contact {
+    max-height: 50px;
+    margin-right: 65%;
+}
+
+#img-under-perfil {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 20px;
+    margin-bottom: 30px;
+}
+
+#img-festival {
+    padding-top: 10%;
+    padding-left: 5%;
+}
+
+#text-white {
+    color: #FFF;
+}
+
+.img-destaques {
+    max-width: 300px;
+}
+
+.carousel {
+    height: 600px !important;
+}
+
+.text-green {
+    color: #64ff00 !important;
+}
+
+.text-ice {
+    color: #e6e6e6 !important;
+}
+
+#margincadtitle {
+    margin-top: 60px !important;
+    margin-bottom: 40px !important;
+    font-size: 3em;
+}
+
+#paddingbtnsair {
+    padding-top: 11px;
+}
+
+.box-title {
+    border: 1px solid #64ff00;
+    padding: 2px;
+    background: none;
+}
+
+.box-background-in {
+    background-color: #282828;
+    border: 1px solid #64ff00;
+    padding: 2px;
+}
+
+.box-background-out {
+    background-color: #282828;
+    color: #282828;
+    height: 100%;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.input-cad {
+    margin-bottom: 0px !important;
+}
+
+.font-primaria {
+    font-family: 'ncaa-michigan' !important;
+    margin-bottom: 0px !important;
+}
+
+.font-secundaria {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.background-ice {
+    background-color: #e6e6e6 !important;
+}
+
+.background-ice-eventos {
+    background-color: #e6e6e6 !important;
+    height: 50vh;
+}
+
+.background-grafite {
+    background-color: #282828;
+}
+
+.background-grafite-login {
+    background-color: #282828;
+    height: 100vh;
+}
+
+.background-grafite-cur {
+    background-color: #282828;
+}
+
+.img-curiosidades {
+    padding-top: 25px;
+}
+
+.border-green {
+    border-bottom: 2px solid #64ff00 !important;
+}
+
+.img-campo {
+    background-image: url("../img/esquematatico.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+.img-classicos {
+    background-image: url("../img/botoesclassicos.png");
+    /*background-size: 100%;*/
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /*height: 100vh;*/
+}
+
+.all-screen {
+    height: auto;
+}
+
+.select-wrapper input.select-dropdown {
+    margin-bottom: 0px !important;
+}
+
+.marginrow {
+    margin-bottom: 0px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.marginrow2 {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.input-field label {
+    color: #9e9e9e !important;
+}
+
+.input-field input[type=text] {
+    color: #9e9e9e !important;
+}
+
+.input-field input[type=text]:focus + label {
+    color: #64ff00 !important;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+    color: #9e9e9e;
+}
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+}
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+}
+
+.input-field .prefix.active {
+    color: #64ff00 !important;
+}
+
+.input-field input[type=password] {
+    color: #9e9e9e !important;
+}
+
+.input-field input[type=password]:focus + label {
+    color: #64ff00 !important;
+}
+
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+    color: #9e9e9e;
+}
+
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+}
+
+.input-field input[type=password].invalid {
+    border-bottom: 1px solid #64ff00 !important;
+    box-shadow: 0 1px 0 0 #64ff00 !important;
+}
+
+.btnsair-out {
+    border: 1px solid #64ff00;
+    background: none;
+    padding: 2px;
+    height: 45px;
+    line-height: 38px;
+    width: 80px;
+}
+
+.btnsair-in {
+    background-color: #64ff00;
+    color: #64ff00;
+    height: 100%;
+}
+
+.btnsair-in p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+}
+
+.btnsair-in a {
+    color: #282828;
+}
+
+.btnconfirmar-out {
+    border: 1px solid #64ff00;
+    background: none;
+    padding: 2px;
+    height: 45px;
+    line-height: 38px;
+    width: 140px;
+    margin: 0 auto;
+}
+
+.btnconfirmar-in {
+    background-color: #64ff00;
+    color: #64ff00;
+    height: 100%;
+}
+
+.btnconfirmar-in p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+}
+
+.btnconfirmar-in a {
+    color: #282828;
+}
+
+.btnalterarsenha-out {
+    border: 1px solid #64ff00;
+    background: none;
+    padding: 2px;
+    height: 45px;
+    line-height: 38px;
+    width: 240px;
+    margin: 0 auto;
+}
+
+.btnalterarsenha-in {
+    background-color: #64ff00;
+    color: #64ff00;
+    height: 100%;
+}
+
+.btnalterarsenha-in p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+}
+
+.btnalterarsenha-in a {
+    color: #282828;
+}
+
+#margin-btns-perfil {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.btninscrever-out {
+    border: 1px solid #64ff00;
+    background: none;
+    padding: 2px;
+    height: 45px;
+    line-height: 38px;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.paddingbtn {
+    padding: 0px 25px 0px 25px;
+}
+
+.btninscrever-in {
+    background-color: #64ff00;
+    color: #64ff00;
+    height: 100%;
+}
+
+.btninscrever-in p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+}
+
+.btninscrever-in a {
+    color: #282828;
+}
+
+.btncancelar-out {
+    border: 1px solid #000;
+    background: none;
+    padding: 2px;
+    height: 45px;
+    line-height: 38px;
+    width: 130px;
+    margin: 0 auto;
+}
+
+.btncancelar-in {
+    background-color: #000;
+    color: #000;
+    height: 100%;
+}
+
+.btncancelar-in p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+}
+
+.btncancelar-in a {
+    color: #e6e6e6;
+}
+
+table, th, td {
+    border-bottom: 1px #64FF00 solid !important;
+}
+
+#logossd {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    max-height: 50px;
+}
+
+#icons-apoio {
+    display: block;
+    margin: auto;
+    width: 180px;
+}
+
+#icons-org {
+    display: block;
+    margin: auto;
+    padding-top: 15px;
+    width: 180px;
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+.img-nike {
+    margin-top: 80px;
+}
+
+.img-ea {
+    margin-top: 30px;
+}
+
+.img-pepsi {
+    margin-top: 0px;
+}
+
+.img-heineken {
+    margin-top: 60px;
+}
+
+.img-emirates {
+    margin-top: 40px;
+}
+
+.img-unicef {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.img-midias {
+    margin-top: 40px;
+    height: 30px;
+}
+
+.img-ssd {
+    display: block;
+    margin: auto;
+    width: 180px;
+}
+
+.tabs {
+    background-color: transparent !important;
+}
+
+.tabs .indicator {
+    background-color: #64FF00 !important;
+}
+
+.tabs .tab a {
+    color: #64FF00 !important;
+    font-size: 16px;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: #000;
+}
+
+.title-contact {
+    margin-top: 10px;
+}
+
+.contato1 {
+    padding: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.paddingzero {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.padding-top {
+    padding-top: 12px !important;
+}
+
+p#margin-top-eventos {
+    margin-top: 0px !important;
+    padding-top: 20px;
+    font-size: 2.9em;
+}
+
+p#margin-top-perfil {
+    margin-top: 0px !important;
+    padding-top: 20px;
+    font-size: 2.9em;
+}
+
+#curiosidades {
+
+    height: 100% !important;
+}
+
+@media (max-width: 767px) {
+    .countdown {
+        font-size: 5em !important;
+        margin-top: 1.4em;
+    }
+
+    .tabs-content {
+        height: 39em !important;
+    }
+
+    .box-header {
+        background-color: #282828;
+        background-size: 100%;
+        background-image: none;
+    }
+
+    .nothing {
+        height: 0em;
+    }
+
+    .img-classicos {
+        background-image: none;
+        background-color: #282828 !important;
+    }
+
+    .frase-top {
+        font-size: 20pt;
+    }
+
+    .biglogo {
+        height: 0px;
+        width: 0px;
+    }
+
+    .img-midias-2 {
+        margin-top: 2em;
+        height: 35px;
+    }
+
+    .nav-wrapper {
+        background-color: #181818;
+    }
+
+    .btnlogar-out {
+        border: 1px solid #64ff00;
+        background: none;
+        padding: 2px;
+        height: 35px;
+        line-height: 30px;
+        width: 94px;
+        margin: 10px 15px;
+    }
+
+    .btnlogar-in p {
+        margin: 0;
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+    #logossdmenu {
+        height: 35px !important;
+        margin-top: 10px;
+    }
+
+    .title-contact {
+        text-align: center;
+        margin-top: 18px;
+    }
+
+    #img-under-contact {
+        max-height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .adresss {
+        text-align: center;
+    }
+
+    .img-midias {
+        margin-top: 20px;
+        height: 30px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .img-ssd {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 180px;
+    }
+
+    #upbtn {
+        display: none !important;
+    }
+}
+
+.back {
+    margin-left: 15px;
+    color: #64FF00;
+}
+
+.back:hover {
+    text-decoration: underline #64FF00;
+}
+
+.buttonHide {
+    background: none;
+    border: none;
+}
+
+.buttonHide {
+    background: none;
+    border: none;
+}
+
+.buttonHide:focus {
+    background: none;
+    border: none;
+}
+
+#sidenav-overlay {
+    opacity: 0 !important;
+    height: 0px !important;
+}
+
+.side-nav {
+    position: fixed;
+    width: 200px;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%);
+    padding-bottom: 60px;
+    background-color: #222222;
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.side-nav li a {
+    font-size: 12pt;
+    color: white;
+}
+
+.error {
+    color: #f44336;
+}
+
+.circle {
+    margin-top: 10px;
+    background-color: #64FF00;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #64FF00;
+}
+
+.circle-out {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border: 2px solid #64ff00;
+    background-color: #282828;
+
+}
+
+.circle > p {
+    line-height: 40px;
+    margin: 0 0 0 1px;
+    font-size: 20pt;
+    text-align: center;
+    font-family: 'ncaa-michigan';
+    color: #282828;
+}
+
+.drop {
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: 0;
+}
+
+.drop-show {
+    height: 100% !important;
+
+}
+
+.iten-drop {
+    text-align: center;
+}
+
+.iten-drop:hover {
+    color: #64ff00;
+    cursor: pointer;
+}
+
+.sem-borda {
+    background: none !important;
+    border: none !important;
+    box-shadow:  none !important;
+
+
+}
+
+/* Css para push  */
+.icons-midias{
+    color: #e6e6e6;
+    font-size: 2.5em;
+    margin-right: 10px;
+}
+
+.icons-midias:hover{
+    color: #64FF00;
+}

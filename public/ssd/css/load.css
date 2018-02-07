@@ -1,0 +1,46 @@
+@keyframes some {
+    from {
+        opacity: 1
+    }
+    to {
+        display: none;
+        opacity: 0;
+        z-index: -50000;
+    }
+}
+
+.fstream {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 100% !important;
+    min-height: 100% !important;
+}
+
+.bg_louco {
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    background: #282828;
+    z-index: 100000;
+}
+
+svg.animate path {
+    animation: svg-animate 4s forwards infinite;
+}
+
+@keyframes svg-animate {
+    from {
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.none {
+    animation-name: some;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}

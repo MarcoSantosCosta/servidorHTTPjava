@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Cadastro">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Cadastro</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/toast.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+
+
+    <script type="text/javascript"
+    src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+
+</head>
+<body>
+    <!-- ##################################  Cadastro  ###################################### -->
+    <section id="cadastro" class="img-classicos background-ice all-screen">
+        <div class="container">
+            <div class="row"><br>
+                <div class="col s12 m3 l3 xl3"></div>
+                <div class="col s12 m6 l6 xl6">
+                    <p class="center font-primaria text-green box-title" id="margincadtitle">ENTRE EM NOSSO TIME</p>
+                </div>
+            </div>
+            <div class="row marginrow">
+                <div class="col s0 m2 l2 xl2"></div>
+                <div class="col s12 m8 l8 xl8 box-background-out">
+                    <div class="box-background-in">
+                        <form ng-controller="CadastroController">
+                            <div>
+                                <div class="input-field col s12 m12 l12 xl12">
+                                    <input id="first_name" type="text" class="validate input-cad" ng-model="user.name">
+                                    <label for="first_name">Nome*</label>
+                                </div>
+                            </div>
+                            <div class="row marginrow">
+                                <div class="input-field col s12 m3 l3 xl3">
+                                    <select ng-model="user.gender">
+                                        <option value="" disabled selected>Gênero</option>
+                                        <option value="F">Feminino</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="O">Outros</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s12 m9 l9 xl9">
+                                    <input id="dtnasc" type="text" class="validate input-cad" ng-model="user.birthday" >
+                                    <label for="dtnasc">Data de Nascimento</label>
+                                </div>
+                            </div>
+                            <div class="row marginrow">
+                                <div class="input-field col s12 m6 l6 xl6">
+                                    <input id="cpf" type="text" class="validate input-cad" ng-model="user.CPF">
+                                    <label for="cpf">CPF*</label>
+                                </div>
+                                <div class="input-field col s12 m6 l6 xl6">
+                                    <input id="rg" type="text" class="validate input-cad" ng-model="user.RG">
+                                    <label for="rg">RG</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-field col s12 m8 l8 xl8">
+                                    <input id="email" type="text" class="validate input-cad" ng-model="user.email">
+                                    <label for="email">E-mail*</label>
+                                </div>
+                                <div class="input-field col s12 m4 l4 xl4">
+                                    <input id="tel" type="text" class="validate input-cad" ng-model="user.phoneNumber">
+                                    <label for="tel">Telefone</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-field col s12 m6 l6 xl6">
+                                    <input id="senha" type="password" class="validate input-cad" ng-model="user.password">
+                                    <label for="senha">Senha*</label>
+                                </div>
+                                <div class="input-field col s12 m6 l6 xl6">
+                                    <input id="confirmarsenha" type="password" class="validate input-cad"
+                                    ng-model="user.passwordConfirmation">
+                                    <label for="confirmarsenha">Confirmar Senha*</label>
+                                </div>
+                            </div>
+                            <div class="row marginrow">
+                                <div class="input-field col s12 m4 l4 xl4">
+                                    <input id="cep" type="text" class="validate input-cad" ng-model="user.CEP">
+                                    <label for="cep">CEP</label>
+                                </div>
+                                <div class="input-field col s12 m3 l3 xl3">
+                                    <select ng-model="user.stateID" >
+                                        <option value="" disabled selected>Estado</option>
+                                        <option value="1">AC</option>
+                                        <option value="2">AL</option>
+                                        <option value="3">AP</option>
+                                        <option value="4">AM</option>
+                                        <option value="5">BA</option>
+                                        <option value="6">CE</option>
+                                        <option value="7">DF</option>
+                                        <option value="8">ES</option>
+                                        <option value="9">GO</option>
+                                        <option value="10">MA</option>
+                                        <option value="11">MT</option>
+                                        <option value="12">MS</option>
+                                        <option value="13">MG</option>
+                                        <option value="14">PA</option>
+                                        <option value="15">PB</option>
+                                        <option value="16">PR</option>
+                                        <option value="17">PE</option>
+                                        <option value="18">PI</option>
+                                        <option value="19">RJ</option>
+                                        <option value="20">RN</option>
+                                        <option value="21">RS</option>
+                                        <option value="22">RO</option>
+                                        <option value="23">RR</option>
+                                        <option value="24">SC</option>
+                                        <option value="25">SP</option>
+                                        <option value="26">SE</option>
+                                        <option value="27">TO</option>
+
+                                    </select>
+                                </div>
+                                <div class="input-field col s12 m5 l5 xl5">
+                                    <input id="cidade" type="text" class="validate input-cad" ng-model="user.city">
+                                    <label for="cidade">Cidade</label>
+                                </div>
+                            </div>
+                            <div class="row marginrow">
+                                <div class="input-field col s12 m12 l12 xl12">
+                                    <input id="endereço" type="text" class="validate input-cad" ng-model="user.street">
+                                    <label for="endereço">Endereço</label>
+                                </div>
+                            </div>
+                            <div class="row marginrow2">
+                                <div class="input-field col s12 m2 l2 xl2">
+                                    <input id="numero" type="text" class="validate input-cad" ng-model="user.number">
+                                    <label for="numero">Número</label>
+                                </div>
+                                <div class="input-field col s12 m4 l4 xl4">
+                                    <input id="compl" type="text" class="validate input-cad" ng-model="user.complement">
+                                    <label for="compl">Complemento</label>
+                                </div>
+                                <div class="input-field col s12 m6 l6 xl6">
+                                    <input id="bairro" type="text" class="validate input-cad" ng-model="user.region">
+                                    <label for="bairro">Bairro</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6 l6 xl6">
+                                    <div class="">
+                                        <br>
+                                        <a href="index.html" class="back">Voltar a página inicial</a>
+                                    </div>
+                                </div>
+                                <div class="col s9 m5 l5 xl5">
+                                    <div class="row">
+                                        <button class="buttonHide right" ng-click="cadastrar()">
+                                            <div class="btnconfirmar-out">
+                                                <div class="btnconfirmar-in">
+                                                    <a class="font-primaria"><p class="center">CONFIRMAR</p></a>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="center">
+                <img src="img/logossd.png" id="logossd">
+            </div>
+        </div>
+    </section>
+    <!--  Scripts-->
+
+    <!-- <script src="js/materialize.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/javascript.js" type="text/javascript"></script>
+
+    <!--Angular && Controller-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/Controllers/CadastroController.js"></script>
+
+    <script src="js/jquery.mask.min.js"></script>
+
+
+    <script>
+        $("#dtnasc").mask("00/00/0000");
+        $("#cpf").mask("000.000.000-00");
+        $("#rg").mask("AAAAAAAAAAAAAAA");
+        $("#tel").mask("(00) 0 0000-0000");
+        $("#cep").mask("00000-000");
+    </script>
+
+</body>
+</html>

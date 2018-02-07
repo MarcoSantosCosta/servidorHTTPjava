@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Editar">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Perfil e Editar</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Load c3.css -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/load.css">
+
+</head>
+<body ng-controller="EditarController">
+<!-- ##################################  MENU  ###################################### -->
+<section id="header">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center"><img id="logossdmenu" src="img/logossd.png"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="perfileditar.html">Perfil</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="perfileditar.html">Perfil</a></li>
+                    <li><a href="eventos.html.html">Eventos</a></li>
+                </ul>
+                <div class="btnlogar-out right" ng-show="!user">
+                    <div class="btnlogar-in center">
+                        <a href="logar.html" class="font-primaria"><p>ENTRAR</p></a>
+                    </div>
+                </div>
+                <ul class="right hide-on-med-and-down" ng-if="user">
+                    <!-- Dropdown Trigger -->
+                    <li class="circle"><p>{{user.data.name.substring(0,1)}}</p></li>
+                    <li ng-if="user"><a class="dropdown-button" href="#" data-activates="dropdown" onclick="drop()">{{user.data.name}}<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                    <br>
+                    <div class="drop">
+                        <div class="iten-drop "><a href="perfileditar.html">Perfil</a></div>
+                        <div class="iten-drop"><a href="eventos.html">Eventos</a></div>
+                        <div class="iten-drop" onclick="deslogar()">Sair</div>
+                    </div>
+                </ul>
+
+                <!--
+
+            <div class="btnlogar-out right">
+                <div class="btnlogar-in center">
+                    <a class='dropdown-button btn right' href='#' data-activates='dropdown1'>Entrar</a>
+                </div>
+            </div>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="login.html">Login</a></li>
+                <li class="divider"></li>
+                <li><a href="cadastro.html">Cadastrar</a></li>
+                <li class="divider"></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>-->
+
+            </div>
+        </nav>
+    </div>
+</section>
+<!-- ##################################  HOME
+    #################################### -->
+<!--<section>-->
+<!--<header class="box-header-perfil">-->
+<!--<div class="row">-->
+<!--<div class="box-filter-header">-->
+<!--<div class="col s12 m12 l12 xl12">-->
+<!--<div class="row">-->
+<!--<div class="col s12 m3 l3 xl3">-->
+<!--<img src="img/midias.png" class="center img-midias-2">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row" style='height: 110px;'></div>-->
+<!--<div class="row">-->
+<!--<div class="col s12 m8 l8 xl8">-->
+<!--<div class="countdown center" id="countdown">48:59:45</div>-->
+<!--<div class="col s0 m2 l2 xl2"></div>-->
+<!--<div class="col s12 m8 l8 xl8">-->
+<!--<div class="frase-top center">-->
+<!--Vem pra Resenha-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col s12 m4 l4 xl4">-->
+<!--<img src="img/logo.svg" height='450em' width='auto'>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</header>-->
+<!--</section>-->
+
+<!-- ##################################  Perfil - Editar  ###################################### -->
+<section id="perfileditar" class="background-ice all-screen">
+    <div class="container">
+        <div class="row">
+            <p id="margin-top-perfil" class="center font-primaria">PERFIL</p>
+            <img src="img/meiodecampotitulo.png" id="img-under-perfil">
+            <div class=" col s12 m12 l12 xl 12 box-background-out">
+                <div class="box-background-in">
+                    <p id="textperfil">Dados Pessoais:</p>
+                    <form>
+                        <div class="row marginrow">
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="first_name" type="text" class="validate input-cad active"
+                                       placeholder="" ng-model="user.data.name">
+                                <label for="first_name">Nome*</label>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <select ng-model="user.data.gender">
+                                    <option value="" selected>Gênero</option>
+                                    <option value="F">Feminino</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="O">Outros</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="dtnasc" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.birthday">
+                                <label for="dtnasc">Data de Nascimento</label>
+                            </div>
+                        </div>
+                        <div class="row marginrow">
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="cpf" type="text" class="validate input-cad" placeholder=""
+                                       ng-model="user.data.cpf">
+                                <label for="cpf">CPF*</label>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="rg" type="text" class="validate input-cad" placeholder=""
+                                       ng-model="user.data.rg">
+                                <label for="rg">RG</label>
+                            </div>
+                            <div class="input-field col s12 m12 l12 xl12">
+
+                                <ul class="collapsible sem-borda" data-collapsible="accordion">
+                                    <li>
+                                        <a href="#" class="back collapsible-header sem-borda">Alterar Senha</a>
+                                        <div class="collapsible-body sem-borda">
+                                            <div class="input-field col s12 m3 l3 xl3 ">
+                                                <input value id="passwd" type="password"
+                                                       class="validate input-cad"
+                                                       ng-model="oldPass">
+                                                <label for="passwd">Senha antiga</label>
+                                            </div>
+                                            <div class="input-field col s12 m3 l3 xl3 ">
+                                                <input value id="passwd" type="password"
+                                                       class="validate input-cad"
+                                                       ng-model="password">
+                                                <label for="passwd">Nova Senha</label>
+                                            </div>
+                                            <div class="input-field col s12 m3 l3 xl3 ">
+                                                <input value id="passwd" type="password"
+                                                       class="validate input-cad"
+                                                       ng-model="confirmPassword">
+                                                <label for="passwd">Confirmação Nova Senha</label>
+                                            </div>
+                                            <button class="buttonHide" ng-click="alterarSenha()">
+                                                <div id="margin-btns-perfil" class="col s12 m3 l3 xl3">
+                                                    <div class="btnconfirmar-out">
+                                                        <div class="btnconfirmar-in center">
+                                                            <a class="font-primaria">ALTERAR</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <br>
+                    </form>
+                </div>
+                <div class="box-background-in">
+                    <p id="textperfil">Contato:</p>
+                    <form>
+                        <div class="row marginrow">
+                            <div class="input-field col s12 m8 l8 xl8">
+                                <input id="email" type="text" class="validate input-cad" placeholder=""
+                                       ng-model="user.email" disabled>
+                                <label for="email">E-mail*</label>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="tel" type="text" class="validate input-cad" placeholder=""
+                                       ng-model="user.data.phoneNumber">
+                                <label for="tel">Telefone</label>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                </div>
+                <div class="box-background-in">
+                    <p id="textperfil">Endereço:</p>
+                    <form>
+                        <div class="row marginrow">
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="endereço" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.address.street">
+                                <label for="endereço">Endereço</label>
+                            </div>
+
+                            <div class="input-field col s12 m4 l4 x4"> <!-- Misturar Numero e Complemento -->
+                                <input value id="numero" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.address.number">
+                                <label for="numero">Número</label>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4"> <!-- Misturar Numero e Complemento -->
+                                <input value id="compl" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.address.complement">
+                                <label for="compl">Complemento</label>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="bairro" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.address.district">
+                                <label for="bairro">Bairro</label>
+                            </div>
+                        </div>
+                        <div class="row marginrow">
+                            <div class="input-field col s12 m5 l5 xl5">
+                                <input value id="cidade" type="text" class="validate input-cad"
+                                       placeholder="" ng-model="user.data.address.city">
+                                <label for="cidade">Cidade</label>
+                            </div>
+                            <div class="input-field col s12 m3 l3 xl3">
+                                <select id="state" ng-model="user.data.address.stateID">
+                                    <option id="state0" value="">Estado</option>
+                                    <option id="state1" value="1">AC</option>
+                                    <option id="state2" value="2">AL</option>
+                                    <option id="state3" value="3">AP</option>
+                                    <option id="state4" value="4">AM</option>
+                                    <option id="state5" value="5">BA</option>
+                                    <option id="state6" value="6">CE</option>
+                                    <option id="state7" value="7">DF</option>
+                                    <option id="state8" value="8">ES</option>
+                                    <option id="state9" value="9" >GO</option>
+                                    <option id="state10" value="10">MA</option>
+                                    <option id="state11" value="11">MT</option>
+                                    <option id="state12" value="12">MS</option>
+                                    <option id="state13" value="13">MG</option>
+                                    <option id="state14" value="14">PA</option>
+                                    <option id="state15" value="15">PB</option>
+                                    <option id="state16" value="16">PR</option>
+                                    <option id="state17" value="17">PE</option>
+                                    <option id="state18" value="18">PI</option>
+                                    <option id="state19" value="19">RJ</option>
+                                    <option id="state20" value="20">RN</option>
+                                    <option id="state21" value="21">RS</option>
+                                    <option id="state22" value="22">RO</option>
+                                    <option id="state23" value="23">RR</option>
+                                    <option id="state24" value="24">SC</option>
+                                    <option id="state25" value="25">SP</option>
+                                    <option id="state26" value="26">SE</option>
+                                    <option id="state27" value="27">TO</option>
+                                </select>
+                            </div>
+                            <div class="input-field col s12 m4 l4 xl4">
+                                <input value id="cep" type="text" class="validate input-cad" placeholder=""
+                                       ng-model="user.data.address.cep">
+                                <label for="cep">CEP</label>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+                <br>
+                <div class="row marginrow">
+                    <div class="col s12 m10 l10 x10"></div>
+                    <button class="buttonHide" ng-click="editar()">
+                        <div class="col s12 m2 l2 xl2 padding-top">
+                            <div class="btnconfirmar-out">
+                                <div class="btnconfirmar-in center">
+                                    <a class="font-primaria"><p>SALVAR</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <br>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</section>
+<!-- ##################################  Contato  ###################################### -->
+<section id="contato" class="background-grafite">
+        <div class="row contato1">
+            <div class="col s12 m6 l6 xl6 paddingzero">
+                <div id="map"></div>
+            </div>
+            <div class="col s12 m6 l6 xl6 ">
+                <div class="container-fluid" id="text-white">
+                    <div class="row" class="contato1">
+                        <div class="col s12 m12 l12 xl12">
+                            <h1 class="font-primaria title-contact">Contato</h1>
+                        </div>
+                        <div class="col s12 m12 l12 xl12">
+                            <img src="img/meiodecampotitulo_branco.png" id="img-under-contact">
+                        </div>
+                        <div class="col s12 m4 l4 xl4">
+                            <div>
+                                <h6 class="font-secundaria adresss">Avenida Comp Junior, 333, Lavras-MG</h6>
+                            </div>
+                            <div class="center">
+                                <a href="https://www.facebook.com" class="icons-midias"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com" class="icons-midias"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com" class="icons-midias"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.twitch.tv" class="icons-midias"><i class="fab fa-twitch"></i></a>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4 xl4">
+                            <h6 class="font-secundaria title-contact">T: 55 99 99999-9999<br>M: contato@ssd.com.br</h6>
+                        </div>
+                        <div class="col s12 m4 l4 xl4">
+                            <img src="img/logossd.png" class="img-ssd responsive-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--  Scripts-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABGj3NxgxG1lRasuPi9sEK6_gi6ylzPl8&callback=initMap">
+</script>
+<!-- <script src="js/materialize.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="js/javascript.js" type="text/javascript"></script>
+
+<script src="js/angular.min.js"></script>
+<script src="js/Countdown.js"></script>
+<script src="js/Securrity.js"></script>
+<script src="js/Controllers/EditarController.js"></script>
+<script src="js/Drop.js"></script>
+
+<script src="js/jquery.mask.min.js"></script>
+
+<script src="js/laod.js"></script>
+
+
+<script>
+    $("#dtnasc").mask("00/00/0000");
+    $("#cpf").mask("000.000.000-00");
+    $("#rg").mask("AAAAAAAAAAAAAAA");
+    $("#tel").mask("(00) 0 0000-0000");
+    $("#cep").mask("00000-000");
+
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+
+</script>
+</body>
+</html>

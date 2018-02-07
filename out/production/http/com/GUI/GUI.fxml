@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.GUI.Controller">
+   <children>
+      <Button layoutX="530.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleButton" text="START" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Label layoutX="14.0" layoutY="360.0" text="Quantidade de Threads" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" />
+      <Label layoutX="14.0" layoutY="14.0" text="Status:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="status" layoutX="68.0" layoutY="14.0" text="STOPED" AnchorPane.topAnchor="15.0" />
+      <TextField fx:id="qtdThreads" layoutX="181.0" layoutY="359.0" prefHeight="31.0" prefWidth="34.0" text="4" AnchorPane.bottomAnchor="15.0" />
+      <TextArea fx:id="tela" editable="false" layoutX="22.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="atualizar" layoutX="507.0" layoutY="10.0" mnemonicParsing="false" onAction="#refresh" text="Atualizar" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>
